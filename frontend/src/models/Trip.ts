@@ -1,0 +1,14 @@
+import { Advantage } from './Advantage';
+
+export interface Trip {
+  id: number;
+  photoUrl: string;
+  title: string;
+  subtitle: string;
+  countries: string[];
+  days: number;
+  co2kilograms: number;
+  rating: number;
+  description: number;
+  advantages: Advantage[];
+}
