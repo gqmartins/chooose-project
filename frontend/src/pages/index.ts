@@ -1,2 +1,2 @@
-export { DetailPage } from './DetailPage';
-export { HomePage } from './HomePage';
+export { DetailPageContainer } from './DetailPage';
+export { HomePageContainer } from './HomePage';

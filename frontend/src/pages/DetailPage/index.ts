@@ -1,1 +1,1 @@
-export { DetailPage } from './DetailPage';
+export { DetailPageContainer } from './DetailPageContainer';

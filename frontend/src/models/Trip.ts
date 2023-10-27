@@ -9,6 +9,6 @@ export interface Trip {
   days: number;
   co2kilograms: number;
   rating: number;
-  description: number;
+  description: string;
   advantages: Advantage[];
 }
