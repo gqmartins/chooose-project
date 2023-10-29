@@ -1,4 +1,4 @@
 export interface PaginationResponse<T> {
   data: T;
-  lastPage: boolean;
+  nextPage: number | undefined;
 }

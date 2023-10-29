@@ -16,9 +16,9 @@ export class TripsApi {
     return this.fetch<Trip[]>(url).then(response => {
       const totalCount = response.headers[this.CountHeader];
       const data = response.data;
-      const lastPage = totalCount < page * itemsPerPage;
+      const nextPage = totalCount < page * itemsPerPage ? page + 1 : undefined;
 
-      return { data, lastPage };
+      return { data, nextPage };
     });
   }
 

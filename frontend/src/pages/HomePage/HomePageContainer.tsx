@@ -1,31 +1,30 @@
-import { useEffect, useState } from 'react';
-import { Trip } from '../../models';
 import { HomePage } from './HomePage';
 import TripsApi from '../../api';
 import { useNavigate } from 'react-router-dom';
 import { getDetailRoute } from '../../routes';
+import { useInfiniteQuery } from '@tanstack/react-query';
 
 const ITEMS_PER_PAGE = 10;
 
 export function HomePageContainer() {
-  const [trips, setTrips] = useState<Trip[]>([]);
-  const [page, setPage] = useState<number>(1);
-  const [hasMore, setHasMore] = useState<boolean>(true);
   const navigate = useNavigate();
 
   const handleLearnMoreClick = (id: number) => navigate(getDetailRoute(id));
 
-  const fetchData = () => {
-    TripsApi.getTrips(page, ITEMS_PER_PAGE).then(response => {
-      setTrips([...trips, ...response.data]);
-      setHasMore(!response.lastPage);
-    });
-    setPage(page + 1);
-  };
+  const getTrips = async ({ pageParam = 1}) => {
+    const response = await TripsApi.getTrips(pageParam, ITEMS_PER_PAGE);
+    return { ...response, prevOffset: pageParam };
+  }
 
-  useEffect(() => {
-    fetchData();  
-  }, []);
+  const { data, fetchNextPage, hasNextPage } = useInfiniteQuery({
+    queryKey: ['trips'],
+    queryFn: getTrips,
+    getNextPageParam: (lastPage) => lastPage.nextPage,
+    initialPageParam: 1
+  });
 
-  return <HomePage trips={trips} handleLearnMoreClick={handleLearnMoreClick} fetchData={fetchData} hasMore={hasMore} />;
+  const trips = data?.pages.flatMap(page => page.data);
+
+  console.log(trips);
+  return <HomePage trips={trips!} handleLearnMoreClick={handleLearnMoreClick} fetchData={fetchNextPage} hasMore={hasNextPage} />;
 }
