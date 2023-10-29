@@ -14,7 +14,7 @@ export function DetailCard({ trip }: DetailCardProps) {
     <Card>
       <CardHeader>
         <Heading>{trip.days} days</Heading>
-        <Text marginTop="10px" textColor="gray.500">Emissions: {co2KilogramsRounded} {co2KilogramsUnit} CO2e</Text>
+        <Text marginTop="10px" textColor="gray.500">Emissions: {co2KilogramsRounded} {co2KilogramsUnit} CO<sub>2</sub>e</Text>
       </CardHeader>
       <Divider width="90%" color="gray.300" alignSelf="center"/>
       <CardBody textColor="gray.500">

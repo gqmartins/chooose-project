@@ -32,7 +32,7 @@ export function TripCard({ trip, handleLearnMoreClick }: TripCardProps) {
             <Flex>
               <Text fontWeight="bold" textColor="white" fontSize="sm">Emissions offset:</Text>
               <Spacer />
-              <Text fontWeight="bold" textColor="white" fontSize="sm">{co2KilogramsRounded} {co2KilogramsUnit} CO2e</Text>
+              <Text fontWeight="bold" textColor="white" fontSize="sm">{co2KilogramsRounded} {co2KilogramsUnit} CO<sub>2</sub>e</Text>
             </Flex>
           </CardBody>
         </Card>
