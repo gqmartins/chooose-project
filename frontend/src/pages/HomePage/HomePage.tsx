@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Box, SimpleGrid } from '@chakra-ui/react';
 import { Trip } from '../../models';
 import { TripCard } from './components';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -19,7 +19,7 @@ export function HomePage({ trips, handleLearnMoreClick, fetchData, hasMore }: Ho
   return (
     <Box padding="30px" backgroundColor='blackAlpha.50'>
       <InfiniteScroll dataLength={trips.length} next={fetchData} hasMore={hasMore} loader={<LoadingItem />} style={infiniteScroolStyles}>
-        <SimpleGrid columns={3} spacingX="30px" spacingY="30px">
+        <SimpleGrid columns={{ sm: 1, md: 2, lg: 2, xl: 3 }} spacingX="30px" spacingY="30px">
           {trips.map(trip => <TripCard trip={trip} handleLearnMoreClick={handleLearnMoreClick} />)}
         </SimpleGrid>
       </InfiniteScroll>

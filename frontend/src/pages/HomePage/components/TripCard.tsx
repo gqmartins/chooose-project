@@ -22,22 +22,22 @@ export function TripCard({ trip, handleLearnMoreClick }: TripCardProps) {
     <Card rounded={15}>
       <Box margin="15px" backgroundImage={trip.photoUrl} rounded={15}>
       <CardBody>
-        <Stack spacing="10px">
-          <Heading textColor="white" alignSelf="center">{trip.title}</Heading>
+        <Stack spacing="10px" alignItems="center">
+          <Heading textColor="white" textAlign="center">{trip.title}</Heading>
           <Text align="center" fontWeight="bold" textColor="white">{countriesCount} countries, {trip.days} days</Text>
-          <Button colorScheme="blue" width="25%" alignSelf="center" marginTop="20px" onClick={() => handleLearnMoreClick(trip.id)}>Learn more</Button>
+          <Button colorScheme="blue" width="120px" marginTop="20px" onClick={() => handleLearnMoreClick(trip.id)}>Learn more</Button>
         </Stack>
-        <Card marginTop="40px" backgroundColor="gray.900" marginLeft="25px" marginRight="25px">
+        <Card marginTop="40px" backgroundColor="gray.900" marginLeft="5%" marginRight="5%">
           <CardBody>
             <Flex>
-              <Text fontWeight="bold" textColor="white">Emissions offset:</Text>
+              <Text fontWeight="bold" textColor="white" fontSize="sm">Emissions offset:</Text>
               <Spacer />
-              <Text fontWeight="bold" textColor="white">{co2KilogramsRounded} {co2KilogramsUnit} CO2e</Text>
+              <Text fontWeight="bold" textColor="white" fontSize="sm">{co2KilogramsRounded} {co2KilogramsUnit} CO2e</Text>
             </Flex>
           </CardBody>
         </Card>
       </CardBody>
-      <CardFooter backgroundColor="white" marginLeft="20px" marginRight="20px" roundedTopRight={15} roundedTopLeft={15}>
+      <CardFooter backgroundColor="white" marginLeft="6%" marginRight="6%" roundedTopRight={15} roundedTopLeft={15}>
         <Flex width="100%">
           <Text fontWeight="bold">Trip rating</Text>
           <Spacer />
