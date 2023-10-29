@@ -25,6 +25,5 @@ export function HomePageContainer() {
 
   const trips = data?.pages.flatMap(page => page.data);
 
-  console.log(trips);
   return <HomePage trips={trips!} handleLearnMoreClick={handleLearnMoreClick} fetchData={fetchNextPage} hasMore={hasNextPage} />;
 }

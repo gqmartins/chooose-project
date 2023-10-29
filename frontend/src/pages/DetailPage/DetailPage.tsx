@@ -20,13 +20,13 @@ export function DetailPage({ trip }: DetailPageProps) {
       <Text marginTop="10px" textColor="gray.500">{trip.subtitle}</Text>
       <Grid marginTop="30px">
         <GridItem marginRight={{lg: "3%"}} marginBottom={{base: "5%", lg: "0%"}} colSpan={{sm: 12, lg: 10}}>
-          <Image src={trip.photoUrl} rounded={15} width='100%'></Image>
+          <Image src={trip.photoUrl} rounded={15} width="100%"></Image>
         </GridItem>
         <GridItem colSpan={{sm: 12, lg: 2}}>
           <DetailCard trip={trip} />
         </GridItem>
         <GridItem colSpan={{sm: 12}}>
-          <Text fontSize='2xl' fontWeight="bold" marginTop="30px" marginBottom="30px">Overview</Text>
+          <Text fontSize="2xl" fontWeight="bold" marginTop="30px" marginBottom="30px">Overview</Text>
           <AdvantageList advantages={trip.advantages} />
           <Text marginTop="30px">{trip.description}</Text>
         </GridItem>

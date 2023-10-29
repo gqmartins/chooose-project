@@ -25,7 +25,7 @@ export function AdvantageList({ advantages }: AdvantageListProps) {
             <GridItem>
               <Flex alignItems="center">
                 {icons[index]}
-                <Text fontSize='2xl' fontWeight="bold">{advantage.title}</Text>
+                <Text fontSize="2xl" fontWeight="bold">{advantage.title}</Text>
               </Flex>
             </GridItem>
             <GridItem>

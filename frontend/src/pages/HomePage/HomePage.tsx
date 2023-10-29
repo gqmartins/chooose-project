@@ -17,7 +17,7 @@ export interface HomePageProps {
 
 export function HomePage({ trips, handleLearnMoreClick, fetchData, hasMore }: HomePageProps) {
   return (
-    <Box padding="30px" backgroundColor='blackAlpha.50'>
+    <Box padding="30px" backgroundColor="blackAlpha.50">
       <InfiniteScroll dataLength={trips ? trips.length : 0} next={fetchData} hasMore={hasMore} loader={<LoadingItem />} style={infiniteScroolStyles}>
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 2, xl: 3 }} spacingX="30px" spacingY="30px">
           {trips && trips.map(trip => <TripCard trip={trip} handleLearnMoreClick={handleLearnMoreClick} />)}
