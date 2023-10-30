@@ -1,6 +1,6 @@
 ﻿using WorkdayNet;
 
-IWorkdayCalendar calendar = new WorkDayCalendarMilliseconds();
+IWorkdayCalendar calendar = new WorkdayCalendar();
 
 calendar.SetWorkdayStartAndStop(8, 0, 16, 0);
 calendar.SetRecurringHoliday(5, 17);
