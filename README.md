@@ -23,5 +23,6 @@ The frontend has a mock server located inside the **mock-server** folder. In ord
 - npm i -g json-server (only required if json-server is not globally installed)
 - json-server --watch .\trips.json --port 3001
 
-To run the frontend project use the following command inside the **frontend** folder:
+To run the frontend project use the following commands inside the **frontend** folder:
+- npm install
 - npm start
